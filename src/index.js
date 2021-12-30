@@ -76,11 +76,6 @@ class Game extends React.Component {
     };
   }
   handelClick(boardNum, fieldNum) {
-    console.log(this.state.active);
-    console.log(boardNum, fieldNum);
-    console.log(this.state.localboard);
-    console.log(this.state.board);
-    console.log(this.state.active);
     if (this.state.active === boardNum || this.state.active === null) {
       if (this.state.board[boardNum][fieldNum] === null) {
         // dont know why this is not working:
