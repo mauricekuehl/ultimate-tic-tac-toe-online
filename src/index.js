@@ -167,7 +167,7 @@ class Game extends React.Component {
           <a
             rel="noreferrer"
             target="_blank"
-            href="https://github.com/mauricekuehl/ultimate-tic-tak-toe-online"
+            href="https://github.com/mauricekuehl/ultimate-tic-tac-toe-online"
           >
             View project on Github
           </a>
