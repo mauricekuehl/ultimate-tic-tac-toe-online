@@ -30,13 +30,13 @@ class LocalBoard extends React.Component {
 
 class Board extends React.Component {
   getClassname(index) {
-    if (this.props.active === index || this.props.active === null) {
-      return "activeLocalboard";
+    if (this.props.localBoard[index] !== null) {
+      return "wonLocalboard";
     } else {
-      if (this.props.localBoard[index] === null) {
-        return "inactiveLocalboard";
+      if (this.props.active === index || this.props.active === null) {
+        return "activeLocalboard";
       } else {
-        return "wonLocalboard";
+        return "inactiveLocalboard";
       }
     }
   }
