@@ -31,15 +31,16 @@ class LocalBoard extends React.Component {
 class Board extends React.Component {
   getClassname(index) {
     if (this.props.localBoard[index] !== null) {
-      return "wonLocalboard";
+      return this.props.localBoard[index] === -1
+        ? "inactiveLocalboard"
+        : "wonLocalboard";
     } else {
-      if (this.props.active === index || this.props.active === null) {
-        return "activeLocalboard";
-      } else {
-        return "inactiveLocalboard";
-      }
+      return this.props.active === index || this.props.active === null
+        ? "activeLocalboard"
+        : "inactiveLocalboard";
     }
   }
+
   render() {
     return (
       <div className="main-board">
@@ -103,10 +104,17 @@ class Game extends React.Component {
             ? ["X", null, "X", null, "X", null, "X", null, "X"]
             : ["O", "O", "O", "O", null, "O", "O", "O", "O"];
           if (this.wonBoard(localboard)) {
-            localboard.map(() => "/");
+            this.setState({
+              board: board,
+              active: -1,
+              localboard: Array(9).fill(null),
+            });
             console.log("won");
             alert((this.state.xToMove ? "X" : "O") + " won");
+            return;
           }
+        } else if (!board[boardNum].includes(null)) {
+          localboard[boardNum] = -1;
         }
 
         this.setState({
@@ -167,7 +175,7 @@ class Game extends React.Component {
           <a
             rel="noreferrer"
             target="_blank"
-            href="https://github.com/mauricekuehl/ultimate-tic-tak-toe-online"
+            href="https://github.com/mauricekuehl/ultimate-tic-tac-toe-online"
           >
             View project on Github
           </a>
