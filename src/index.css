@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  background-color: #1b1c2b;
+  height: 120vh;
+  width: 100%;
+}
+main {
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+h1 {
+  padding: 0.375rem;
+  padding-bottom: 0;
+  color: rgb(144, 0, 255);
+  font-size: 2.5rem;
+  font-family: monospace;
+}
+.main-board {
+  margin: 2rem;
+}
+main > button {
+  margin: 0.5rem;
+  margin-bottom: 1.5rem;
+  width: 6rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgb(144, 0, 255);
+  background-color: #323340;
+  border-radius: 5px;
+  border: none;
+}
+main > button:hover {
+  background-color: #3c3c52;
+}
+footer {
+  background-color: black;
+  height: 20vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+.main-board {
+  height: 80vh;
+  width: 80vh;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-gap: 0.5rem;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.local-board {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-gap: 0.375rem;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.field {
+  width: 100%;
+  height: 100%;
+  font-size: 3.25rem;
+  font-weight: 700;
+  color: rgb(144, 0, 255);
+  background-color: #323340;
+  border: 1px solid #494955;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.field:hover {
+  background-color: #494955;
+}
+.activeLocalboard {
+  background-color: rgb(133, 0, 235);
+}
+.inactiveLocalboard > button {
+  background-color: #3c3c52;
+}
+.inactiveLocalboard > button:hover {
+  cursor: default;
+  background-color: #3c3c52;
+}
+.wonLocalboard > button:hover {
+  background-color: #1b1c2b;
+  cursor: default;
+}
+.wonLocalboard > button {
+  background-color: #1b1c2b;
+  border: none;
+}
